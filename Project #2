@@ -1,0 +1,19 @@
+class Person:
+    def __init__(self, name, address, phone):
+        self.name = name
+        self.address = address
+        self.phone = phone
+        
+class Customer(Person):
+    def __init__(self, name, address, phone, customer_number, on_mailing_list):
+        super().__init__(name, address, phone)
+        self.customer_number = customer_number
+        self.on_mailing_list = on_mailing_list
+        
+    def __str__(self):
+        mailing_status = "Yes" if self.on_mailing_list else "No"
+        return f"{self.name} ({self.customer_number}): Address - {self.address}, Phone - {self.phone}, Mailing List - {mailing_status}"
+        
+# example program
+customer = Customer("John Doe", "123 Main St.", "555-1234", "C001", True)
+print(customer)

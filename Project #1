@@ -1,0 +1,17 @@
+class Employee:
+    def __init__(self, name, emp_num):
+        self.name = name
+        self.emp_num = emp_num
+        
+class ShiftSupervisor(Employee):
+    def __init__(self, name, emp_num, annual_salary, bonus):
+        super().__init__(name, emp_num)
+        self.annual_salary = annual_salary
+        self.bonus = bonus
+        
+    def __str__(self):
+        return f"{self.name} ({self.emp_num}): Annual salary - {self.annual_salary}, Bonus - {self.bonus}"
+
+# example program
+supervisor = ShiftSupervisor("John Doe", 12345, 50000, 5000)
+print(supervisor)
